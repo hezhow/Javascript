@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>DOM元素拖动</title>
+</head>
+
+<body>
+
+<div id="dragMain"></div>
+
+<img src="" id="dragImg">
+
+
+
+
+<script>
+var drag_main=document.getElementById('dragMain');
+var drag_img=document.getElementById('dragImg');
+
+drag_main.ondragover=function(e){
+  e.preventDefault();
+  //当元素在另一个容器拖动时，取消默认动作
+}
+
+
+drag_img.ondragstart=function(e){
+  e.dataTransfer.setData("id","dragImg");
+  //设置当前拖动图片的标识值。
+}
+
+drag_main.ondrop=function(e){
+  var img=document.getElementById(e.dataTransfer.getData("id"));
+  e.target.appendChild(img);
+  //e.target表示在当前鼠标所指向的目标。
+}
+</script>
+
+</body>
+</html>
