@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keyword" content="">
+  <meta name="descript" content="">
+  <title>文件读取</title>
+</head>
+
+<body>
+<div id="msg"></div>
+<input type="file" id="file_text">
+
+<script>
+  var el_file=document.getElementById('file_text');
+  var el_msg=document.getElementById('msg');
+
+  el_fileId.addEventListener('change',readImg);
+
+
+function readImg(){
+var _file=this.files[0];  //获取第一个file
+
+if(_file.type.match(/image/gi)){  //判断文件是否为图片，若想判断其它，可以match()其它格式，通过console.log(_file.type)来查看。
+
+  var _reader=new fileReader();
+  
+  _reader.onload=function(e){
+    el_msg.innerHTML="<img src='"+this.result+"'>";
+  }
+}
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+
+</html>
