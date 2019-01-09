@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>头部-滚动进度条-纯CSS</title>
+  <style type="text/css">
+ 
+  body{
+    background:linear-gradient(to right top,#ff0000 50%,#ffffff 50%);
+    background-size:100% calc(100%-100vh + 5px);
+    background-repeat:no-repeat;
+  }
+  body::after{
+    content:'';
+    position:fixed;
+    background:#fff;
+    top:5px;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index=-1;
+  }
+  </style>
+
+</head>
+<body>
+
+<div>
+<h5>头部-滚动进度条</h5>
+<p>滚动时，头部的进度条增加</p>
+<p>原理在于：为body添加一个从右上到左下的渐变，使用伪元素覆盖多余部位，只距离最顶5px高度，并固定位置，图层为-1层，不会挡住主内容的文字。</p>
+
+</div>
+
+</body>
+</html>
